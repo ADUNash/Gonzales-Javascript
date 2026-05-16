@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Activities – Gonzales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="badge">JS</div>
+        <div>
+          <h1>JavaScript Activities</h1>
+          <p class="subtitle">Gonzales &nbsp;·&nbsp; Activities 1–8</p>
+        </div>
+      </div>
+      <span class="tag">BSIT 104</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="section-label">Click a card to run the activity</div>
+    <div class="grid">
+
+      <div class="card" onclick="openModal('modal-1')">
+        <div class="card-top">
+          <span class="act-num">01</span>
+          <span class="pill">DevTools</span>
+        </div>
+        <h2>Text Editor &amp; DevTools</h2>
+        <p>Log output to the browser console using <code>console.log()</code>.</p>
+        <div class="card-footer">Run activity →</div>
+      </div>
+
+      <div class="card" onclick="openModal('modal-2')">
+        <div class="card-top">
+          <span class="act-num">02</span>
+          <span class="pill">DOM</span>
+        </div>
+        <h2>getElementById</h2>
+        <p>Manipulate HTML elements using <code>document.getElementById()</code>.</p>
+        <div class="card-footer">Run activity →</div>
+      </div>
+
+      <div class="card" onclick="openModal('modal-3')">
+        <div class="card-top">
+          <span class="act-num">03</span>
+          <span class="pill">External JS</span>
+        </div>
+        <h2>External JavaScript</h2>
+        <p>Link a separate <code>.js</code> file to an HTML document.</p>
+        <div class="card-footer">Run activity →</div>
+      </div>
+
+      <div class="card" onclick="openModal('modal-4')">
+        <div class="card-top">
+          <span class="act-num">04</span>
+          <span class="pill">Hoisting</span>
+        </div>
+        <h2>Automatic / By Default</h2>
+        <p>Implicit declaration and <code>var</code> hoisting behavior.</p>
+        <div class="card-footer">Run activity →</div>
+      </div>
+
+      <div class="card" onclick="openModal('modal-5')">
+        <div class="card-top">
+          <span class="act-num">05</span>
+          <span class="pill">Variables</span>
+        </div>
+        <h2>let Declaration</h2>
+        <p>Block-scoped variable declaration using <code>let</code>.</p>
+        <div class="card-footer">Run activity →</div>
+      </div>
+
+      <div class="card" onclick="openModal('modal-6')">
+        <div class="card-top">
+          <span class="act-num">06</span>
+          <span class="pill">Output</span>
+        </div>
+        <h2>window.alert()</h2>
+        <p>Display a browser dialog using <code>window.alert()</code>.</p>
+        <div class="card-footer">Run activity →</div>
+      </div>
+
+      <div class="card" onclick="openModal('modal-7')">
+        <div class="card-top">
+          <span class="act-num">07</span>
+          <span class="pill">Output</span>
+        </div>
+        <h2>document.write()</h2>
+        <p>Write content directly to the page using <code>document.write()</code>.</p>
+        <div class="card-footer">Run activity →</div>
+      </div>
+
+      <div class="card" onclick="openModal('modal-8')">
+        <div class="card-top">
+          <span class="act-num">08</span>
+          <span class="pill">DOM</span>
+        </div>
+        <h2>innerText / innerHTML / textContent</h2>
+        <p>Compare the three DOM text-reading properties.</p>
+        <div class="card-footer">Run activity →</div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay" onclick="closeModal()"></div>
+
+  <!-- MODAL 1 -->
+  <div class="modal" id="modal-1">
+    <div class="modal-header">
+      <div><span class="act-num">01</span><h3>Text Editor &amp; DevTools</h3></div>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <p class="modal-desc">Press <kbd>F12</kbd> and open the <strong>Console</strong> tab to see the logged message.</p>
+    <div class="output-block" id="act1-out">Running...</div>
+    <div class="hint">💡 <code>console.log("Hello World")</code> runs when the page loads.</div>
+  </div>
+
+  <!-- MODAL 2 -->
+  <div class="modal" id="modal-2">
+    <div class="modal-header">
+      <div><span class="act-num">02</span><h3>getElementById</h3></div>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <p class="modal-desc">JavaScript updated the paragraph below using <code>document.getElementById()</code>:</p>
+    <div class="output-block" id="act2-out"></div>
+  </div>
+
+  <!-- MODAL 3 -->
+  <div class="modal" id="modal-3">
+    <div class="modal-header">
+      <div><span class="act-num">03</span><h3>External JavaScript</h3></div>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <p class="modal-desc">This text was injected by an external <code>scripts.js</code> file:</p>
+    <div class="output-block" id="act3-out"></div>
+  </div>
+
+  <!-- MODAL 4 -->
+  <div class="modal" id="modal-4">
+    <div class="modal-header">
+      <div><span class="act-num">04</span><h3>Automatic / By Default</h3></div>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <p class="modal-desc">Variable used before it was declared — <code>var</code> is hoisted to the top automatically:</p>
+    <div class="output-block" id="act4-out"></div>
+    <div class="hint">💡 Both snippets produce the same result because of hoisting.</div>
+  </div>
+
+  <!-- MODAL 5 -->
+  <div class="modal" id="modal-5">
+    <div class="modal-header">
+      <div><span class="act-num">05</span><h3>let Declaration</h3></div>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <p class="modal-desc">Variable declared with <code>let</code> — block-scoped and not hoisted:</p>
+    <div class="output-block" id="act5-out"></div>
+  </div>
+
+  <!-- MODAL 6 -->
+  <div class="modal" id="modal-6">
+    <div class="modal-header">
+      <div><span class="act-num">06</span><h3>window.alert()</h3></div>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <p class="modal-desc">Click the button to trigger the browser's built-in alert dialog:</p>
+    <button class="run-btn" onclick="window.alert('Hello World')">Run window.alert()</button>
+  </div>
+
+  <!-- MODAL 7 -->
+  <div class="modal" id="modal-7">
+    <div class="modal-header">
+      <div><span class="act-num">07</span><h3>document.write()</h3></div>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <p class="modal-desc">Result of <code>document.write(5 + 6)</code>:</p>
+    <div class="output-block" id="act7-out"></div>
+    <div class="hint">⚠️ Calling <code>document.write()</code> after page load overwrites the entire document. Output is safely simulated here.</div>
+  </div>
+
+  <!-- MODAL 8 -->
+  <div class="modal" id="modal-8">
+    <div class="modal-header">
+      <div><span class="act-num">08</span><h3>innerText / innerHTML / textContent</h3></div>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+    <p class="modal-desc">Target element:</p>
+    <p id="example" class="example-p"> This paragraph has excess spacing and has <span>a span element</span> inside.</p>
+    <div class="btn-row">
+      <button class="run-btn sm" onclick="alert(document.getElementById('example').innerText)">innerText</button>
+      <button class="run-btn sm" onclick="alert(document.getElementById('example').innerHTML)">innerHTML</button>
+      <button class="run-btn sm" onclick="alert(document.getElementById('example').textContent)">textContent</button>
+    </div>
+    <div class="hint">💡 Open DevTools Console and type: <code>console.log('Hello World');</code></div>
+  </div>
+
+  <script src="JavaScript/scripts.js"></script>
+</body>
+</html>
